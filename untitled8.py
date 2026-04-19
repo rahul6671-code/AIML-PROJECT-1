@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1wGNR95_QPGGsjl_L8aNyxXpwdDr9tsrE
 """
 
-!pip install shap imbalanced-learn xgboost lightgbm --quiet
-
 # Core
 import numpy as np
 import pandas as pd
@@ -893,3 +891,5 @@ plt.tight_layout()
 plt.savefig('summary_dashboard.png', dpi=150, bbox_inches='tight')
 plt.show()
 print("✅ Dashboard saved!")
+import joblib
+joblib.dump(results[best_model_name]['model'], "model.pkl")
